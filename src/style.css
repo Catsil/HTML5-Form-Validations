@@ -1,1 +1,6 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
+.card-header{
+    font-size:4rem;
+    }
+    h5{
+        font-size: 0.5rem;
+    }

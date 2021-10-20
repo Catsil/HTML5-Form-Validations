@@ -1,29 +1,143 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-    <link rel="shortcut icon" href="./4geeks.ico" />
-  </head>
-  <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
-      </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/94a196b84a.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Formulario</title>
+</head>
+<body>
+
+
+
+    <form class="row m-4" id="form">
+      <div class="card p-0">
+        <div class="card-header m-0" >
+         <h1>Payment form example</h1>
+        </div>
+        <div class="card-body">
+          <div class="row p-3">
+            <div class="alert alert-danger d-none" id="fail" role="alert">
+                Some fields are missing
+              </div>
+             <div class="alert alert-success d-none" id="success" role="alert">
+               Everything is ok!
+             </div> 
+            </div> 
+        <div class="row">
+            <div class="col-md-5">
+              <label for="inputCard" class="form-label">Card #</label>
+              <input type="text" class="form-control" id="inputCard" placeholder="XXXXXXXXXXXXXXXX">
+            </div>
+            <div class="col-md-3">
+              <label for="inputCodigo" class="form-label">CVC #</label>
+              <input type="text" class="form-control" id="inputCodigo" placeholder="000">
+            </div>
+            <div class="col-md-4"> 
+              
+              <label for="basic-url" class="form-label">Amount</label>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3">$</span>
+                <input type="number" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="Amount">
+              </div>
+            </div>
+        <div class="row">
+            <div class="col-6">
+              <label for="inputFirstName" class="form-label">First Name </label>
+              <input type="text" class="form-control" id="inputFirstName" placeholder="Name">
+            </div>
+            <div class="col-6">
+                <label for="inputLastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+              </div>
+            </div>
+    
+        <div class="row">
+            <div class="col-6">
+              <label for="inputCity" class="form-label">City</label>
+              <input type="text" class="form-control" id="inputCity" placeholder="Ej, Madrid">
+            </div>
+        
+            <div class="col-md-3">
+              <label for="exampleDataList" class="form-label">State</label>
+              <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                <datalist id="datalistOptions">
+                <option> Pick a state</option>
+                <option>Andalucía</option>
+                <option>Aragón</option>
+                <option>Principado de Asturias</option>
+                <option>Illes Balears</option>
+                <option>Canarias</option>
+                <option>Cantabria</option>
+                <option>Castilla y León</option>
+                <option>Castilla-La Mancha</option>
+                <option>Cataluña</option>
+                <option>Comunitat Valenciana</option>
+                <option>Extremadura</option>
+                <option>Galicia</option>
+                <option>Comunidad de Madrid</option>
+                <option>Región de Murcia</option>
+                <option>Comunidad Foral de Navarra</option>
+                <option>País Vasco</option>
+                <option>La Rioja</option>
+                <option>Ciudad Autónoma de Ceuta</option>
+                <option>Ciudad Autónoma de Melilla</option>
+             
+              </datalist>
+            </div>
+            <div class="col-md-3">
+              <label for="inputZip" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="inputZip">
+            </div>
+        </div>
+        
+         <div class="row justify-content-end">
+             <div class="col-6 align-self-center">
+                <p>We accept:</p>
+                <div class="form-check form-check-inline" >
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1"> <i class="fab fa-cc-mastercard fa-2x"></i></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2"> <i class="fab fa-cc-visa fa-2x"></i></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option2">
+                    <label class="form-check-label" for="inlineRadio2"> <i class="fab fa-cc-diners-club fa-2x"></i></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2">
+                    <label class="form-check-label" for="inlineRadio2"><i class="fab fa-cc-amex fa-2x"></i></label>
+                  </div>
+                 
+             </div>
+            <div class="col-6">
+                     <label for="message-text" class="col-form-label">Message</label>
+                    <textarea class="form-control " id="message-text"></textarea>
+                   <p class="notes fs-6 fw-light">
+                    Add any notes here
+                   </p>
+              </div>
+            </div>
+        </div>
+        </div>
+        <div class="card-footer m-0">
+          <div class="row justify-content-end m-0">
+            <div class="col-3 d-flex">
+                <input class="btn btn-secondary" id="reset"type="reset" value="Cancel">
+                <input class="btn btn-primary" id="submit" type="submit" value="Send">
+            </div>
+        </div>
+      </form>
     </div>
-  </body>
+  </div>
+
+
+   
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script  type="text/javascript"src="app.js"></script>
+</body>
 </html>
