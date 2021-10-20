@@ -109,7 +109,9 @@ SUBMIT.addEventListener("submit", event => {
     FAIL.classList.add("d-none");
   } else {
     FAIL.classList.remove("d-none");
-    SUCCESS.classList.add("d-block");
+    FAIL.classList.add("d-block");
+    SUCCESS.classList.remove("d-block");
+    SUCCESS.classList.add("d-none");
   }
 });
 
