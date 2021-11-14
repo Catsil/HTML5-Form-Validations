@@ -33,8 +33,8 @@ CARD.addEventListener("focusout", () => {
   if (
     CARD.value.length >= 16 &&
     CARD.value.length <= 19 &&
-    isNumb(CARD.value) &&
-    isRealNum(CARD.value)
+    CARD.value &&
+    valid_credit_card(CARD.value)
   ) {
     isValid(CARD);
   } else {
@@ -82,7 +82,7 @@ ZIP.addEventListener("focusout", () => {
 MESSAGE.addEventListener("focusout", () => {
   if (
     MESSAGE.value.length >= 1 &&
-    MESSAGE.value.length <= 10 &&
+    MESSAGE.value.length <= 100 &&
     isText(MESSAGE.value)
   ) {
     isValid(MESSAGE);
@@ -125,7 +125,7 @@ const isInvalid = input => {
 };
 
 const isText = text => {
-  return /^[a-zA-Z]+$/.test(text);
+  return /^[a-zñA-ZÑ-áéíóú ]+$/.test(text);
 };
 
 const isNumb = number => {
@@ -133,4 +133,26 @@ const isNumb = number => {
 };
 const isRealNum = numb => {
   return numb % 1 == 0 && numb >= 0;
+};
+
+const valid_credit_card = value => {
+  // Accept only digits, dashes or spaces
+  if (/[^0-9-\s]+/.test(value)) return false;
+
+  // The Luhn Algorithm. It's so pretty.
+  let nCheck = 0,
+    bEven = false;
+  value = value.replace(/\D/g, "");
+
+  for (var n = value.length - 1; n >= 0; n--) {
+    var cDigit = value.charAt(n),
+      nDigit = parseInt(cDigit, 10);
+
+    if (bEven && (nDigit *= 2) > 9) nDigit -= 9;
+
+    nCheck += nDigit;
+    bEven = !bEven;
+  }
+
+  return nCheck % 10 == 0;
 };
